@@ -7,6 +7,13 @@ use App\Models\User;
 
 class UserController extends Controller
 {  
+    public function __construct() {
+        $this->middleware('can:users.index')->only('index');
+        $this->middleware('can:users.edit')->only('edit', 'update');
+        $this->middleware('can:users.edit')->only('create', 'store');
+        $this->middleware('can:users.destroy')->only('destroy');
+    }
+
     public function index() {
         $users = User::all();
         return view('layouts.users.list', compact('users'));

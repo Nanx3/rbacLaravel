@@ -1,0 +1,11 @@
+Autorización
+Consiste en dar acceso a una serie de recursos a un usuario o sistema.
+Y esque ademas de la autenticación podemos distinguir tipos de usuarios en nuestro sistema
+para dar solo autorización a los usuarios que lo necesitan.
+
+ACL (access cntrol list)
+Alternativa flexible y eficiente para realizar por permisos.
+
+RBAC (role based access control)
+El administrador del sistema asigna UN NIVEL y CAREGORIA a casa usuario y objeto
+en dependencia del rol que cumple.

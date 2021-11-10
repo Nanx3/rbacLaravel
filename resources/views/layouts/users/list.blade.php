@@ -33,12 +33,17 @@
                         <td class="text-right">{{ $user->created_at }}</td>
                         <td>
                             <div class="table-data-feature">
+                                @can('users.show')
                                 <a href="{{ route('users.show', $user->id) }}" class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="View">
                                     <i class="fa fa-eye"></i>
                                 </a>
+                                @endcan
+                                @can('users.edit')
                                 <a href="{{ route('users.edit', $user->id) }}" class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
                                     <i class="zmdi zmdi-edit"></i>
                                 </a>
+                                @endcan
+                                @can('users.destroy')
                                 <form method="POST" action="{{ route('users.destroy', $user->id) }}">
                                     @csrf
                                     @method('DELETE')
@@ -46,6 +51,7 @@
                                         <i class="zmdi zmdi-delete"></i>
                                     </button>
                                 </form>
+                                @endcan
                             </div>
                         </td>
                     </tr>
