@@ -7,7 +7,7 @@
                         <img src="{!! asset('theme/images/icon/avatar-01.jpg') !!}" alt="John Doe" />
                     </div>
                     <div class="content">
-                        <a class="js-acc-btn" href="#">john doe</a>
+                        <a class="js-acc-btn" href="#">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</a>
                     </div>
                     <div class="account-dropdown js-dropdown">
                         <div class="info clearfix">
@@ -18,9 +18,9 @@
                             </div>
                             <div class="content">
                                 <h5 class="name">
-                                    <a href="#">john doe</a>
+                                    <a href="#">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</a>
                                 </h5>
-                                <span class="email">johndoe@example.com</span>
+                                <span class="email">{{ Auth::user()->email }}</span>
                             </div>
                         </div>
                         <div class="account-dropdown__body">
@@ -38,8 +38,10 @@
                             </div>
                         </div>
                         <div class="account-dropdown__footer">
-                            <a href="#">
-                                <i class="zmdi zmdi-power"></i>Logout</a>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button style="color:red;padding-top:10px;padding-bottom:10px;padding-left:20px;">Logout</button>
+                            </form>
                         </div>
                     </div>
                 </div>

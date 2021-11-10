@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-<h1>Bienvenid@</h1>
+<h1>Welcome, you're logged in!</h1>
 @endsection
